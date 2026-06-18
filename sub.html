@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Series BK - ซีรี่ย์จีน ละครสั้นจีน ซีรี่ย์แนวตั้ง พากย์ไทย ซับไทย อัพเดทใหม่ทุกวัน</title>
+  <title>ซีรีย์ซับไทย</title>
   <link rel="icon" href="https://img5.pic.in.th/file/secure-sv1/copilot_image_1756473322379_11zon.jpeg" type="image/png" />
-  <link rel="canonical" href="https://series-bk.github.io/" />
+  <link rel="canonical" href="https://series-bk.github.io/sub.html" />
   <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -186,8 +186,6 @@
       font-size: 0.9rem;
     }
   </style>
-
-
 </head>
 <body>
 <header>
@@ -197,15 +195,15 @@
   </div>
   <nav id="navMenu">
     <a href="/">หน้าแรก</a>
-    <a href="thai">อนิเมะพากย์ไทย</a>
-    <a href="sub">อนิเมะซับไทย</a>
-  
+    <a href="thai">ซีรีย์พากย์ไทย</a>
+    <a href="sub">ซีรีย์ซับไทย</a>
+    
     <a href="contact">ติดต่อแจ้งปัญหา</a>
   </nav>
 </header>
 
 <main>
-  <h1>Series BK - ซีรี่ย์จีน ละครสั้นจีน ซีรี่ย์แนวตั้ง พากย์ไทย ซับไทย อัพเดทใหม่ทุกวัน</h1>
+  <h1>ซีรีย์ซับไทย</h1>
   <div class="search-container">
     <input id="searchInput" type="search" placeholder="ค้นหาอนิเมะ..." aria-label="ค้นหาอนิเมะ" />
   </div>
@@ -222,7 +220,7 @@
   © 2025 Series BK - ซีรี่ย์จีน ละครสั้นจีน ซีรี่ย์แนวตั้ง พากย์ไทย ซับไทย อัพเดทใหม่ทุกวัน.
 </footer>
 
-<script src="anime-data.js"></script>
+<script src="anime-data-sub.js"></script>
 <script>
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
@@ -243,7 +241,9 @@
 
   const itemsPerPage = 20;
   let currentPage = 1;
-  let filteredList = animeList;
+  let filteredList = animeList.filter(anime =>
+  anime.type.includes("ซับไทย")
+);
 
   function renderPage(page) {
     animeGrid.innerHTML = '';
