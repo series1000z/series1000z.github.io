@@ -1,128 +1,75 @@
 <!DOCTYPE html>
-<html lang="th">
-
+<html>
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>My Video Player</title>
+<title>Player</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-
 <style>
-
 body{
     margin:0;
-    background:#111;
-    color:white;
-    font-family:Arial;
-    text-align:center;
-}
-
-
-.box{
-    padding:20px;
-}
-
-
-input{
-    width:80%;
-    padding:12px;
-    font-size:16px;
-}
-
-
-button{
-    padding:12px 25px;
-    margin:10px;
-    cursor:pointer;
-}
-
-
-video{
-    width:90%;
-    max-height:80vh;
     background:#000;
 }
 
-
+video{
+    width:100vw;
+    height:100vh;
+}
 </style>
 
 </head>
 
-
 <body>
 
 
-<div class="box">
-
-<h2>Video Player</h2>
-
-
-<input id="url"
-placeholder="ใส่ลิงก์ mp4 หรือ m3u8">
-
-
-<button onclick="playVideo()">
-เล่น
-</button>
-
-
-</div>
-
-
-<video
-id="video"
+<video id="video"
 controls
 controlsList="nodownload"
-oncontextmenu="return false"
-playsinline>
+playsinline
+oncontextmenu="return false">
 </video>
-
 
 
 <script>
 
+const video = document.getElementById("video");
 
-let hls;
-
-
-function playVideo(){
+let url = new URLSearchParams(location.search).get("url");
 
 
-const url =
-document.getElementById("url").value;
+if(!url){
 
+document.body.innerHTML =
+"<h2 style='color:white;text-align:center'>ไม่พบลิงก์</h2>";
 
-const video =
-document.getElementById("video");
-
-
-
-// ล้างตัวเก่า
-
-if(hls){
-    hls.destroy();
 }
 
 
+// Pixeldrain
+if(url.includes("pixeldrain.com/api/file/")){
 
-// m3u8
+    url = url.replace(
+    "pixeldrain.com/api/file/",
+    "pixeldrain.com/api/file/"
+    );
+
+}
+
 
 if(url.includes(".m3u8")){
 
 
     if(Hls.isSupported()){
 
-
-        hls = new Hls();
+        const hls = new Hls();
 
         hls.loadSource(url);
 
         hls.attachMedia(video);
-
 
     }else{
 
@@ -131,24 +78,13 @@ if(url.includes(".m3u8")){
     }
 
 
-}
-
-
-// mp4 / pixeldrain
-
-else{
+}else{
 
 
     video.src=url;
 
-}
-
-
-video.play();
-
 
 }
-
 
 
 </script>
