@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html dir='ltr' lang='hi' xmlns='http://www.w3.org/1999/xhtml' 
+xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' 
+xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:og='http://ogp.me/ns#'>
+<head>
+
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect'/>
+<link href='https://fonts.googleapis.com/css2?family=Material+Icons&family=Noto+Sans+Devanagari:wght@400;700&display=swap' rel='stylesheet'/>
+<link href='/fav.png' rel='icon' type='image/x-icon'/>
+
+<!-- Meta Data-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HLS-Player.net का उपयोग ऑनलाइन M3U8 चलाने, HLS लिंक का परीक्षण करने और HLS को MP4 में बदलने के लिए करें। निर्बाध स्ट्रीमिंग के लिए एक मुफ्त M3U8 प्लेयर।">
+<meta name="keywords" content="m3u8 प्लेयर ऑनलाइन, hls प्लेयर ऑनलाइन, m3u8 प्लेयर, ऑनलाइन m3u8 प्लेयर, hls प्लेयर, मुफ्त m3u8 प्लेयर, m3u8 स्ट्रीमिंग प्लेयर, hls से mp4 ऑनलाइन, m3u8 फाइंडर ऑनलाइन">
+<meta name="author" content="HLS-Player.net">
+<meta property="og:title" content="HLS प्लेयर - मुफ्त M3U8, MP4, DASH प्लेयर">
+<meta property="og:description" content="HLS-Player.net का उपयोग ऑनलाइन M3U8 चलाने, HLS लिंक का परीक्षण करने और HLS को MP4 में बदलने के लिए करें। निर्बाध स्ट्रीमिंग के लिए एक मुफ्त M3U8 प्लेयर।">
+<meta property="og:image" content="https://www.hls-player.net/header.png">
+<meta property="og:url" content="https://hls-player.net">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HLS प्लेयर - मुफ्त M3U8, MP4, DASH प्लेयर">
+<meta name="twitter:description" content="HLS-Player.net का उपयोग ऑनलाइन M3U8 चलाने, HLS लिंक का परीक्षण करने और HLS को MP4 में बदलने के लिए करें। निर्बाध स्ट्रीमिंग के लिए एक मुफ्त M3U8 प्लेयर।">
+<meta name="twitter:image" content="https://www.hls-player.net/header.png">
+<meta name="google-site-verification" content="wotklhViaDVD2LPjfIZyH3iQnf60G4vtT744BXFvHyU" />
+
+<!-- Schema.org markup for Google+ -->
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "HLS-Player.net",
+    "url": "https://www.hls-player.net",
+    "description": "HLS स्ट्रीम ऑनलाइन चलाने के लिए मुफ्त M3U8 प्लेयर। M3U8 लिंक का परीक्षण करें और HLS को MP4 में बदलें।",
+    "author": {
+        "@type": "Organization",
+        "name": "HLS-Player.net"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "HLS-Player.net"
+    },
+    "mainEntityOfPage": "https://www.hls-player.net",
+    "sameAs": [
+        "https://twitter.com/hls_player",
+        "https://www.facebook.com/hlsplayer"
+    ]
+}
+</script>
+
+<style id='page-skin-1' type='text/css'>
+/*Logo position*/
+img.rmp-logo.rmp-logo-top-left {
+left: 10px !important;
+right: unset !important;
+top: 10px !important;
+bottom: unset !important;
+z-index: 999;
+}
+
+h2 {
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+</style>
+
+<title>HLS प्लेयर - मुफ्त M3U8, MP4, DASH प्लेयर</title>
+<link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' rel='stylesheet'/>
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' rel='stylesheet'/>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'></script>
+<script src='/script.js'></script>
+
+</head>
+<body class='index mpstyle1 players2'>
+<div class='container'>
+<div class='jumbotron jumbotron-fluid text-center my-2 rounded'>
+<div class='container'>
+<div class='logo-container'>
+<a href="/hi/">
+<img alt='HLS प्लेयर - मुफ्त M3U8, MP4, DASH प्लेयर' src='/header.png' style='max-width:100%; height:auto;'/>
+</a>
+</div>
+</div>
+</div>
+
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7981191925382455"
+     crossorigin="anonymous"></script>
+<!-- Responsiveeee -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7981191925382455"
+     data-ad-slot="3322637685"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<div class='card my-1 p-1 w-100 text-center d-block'>
+  और अधिक: 
+  <a href='/'> 🇬🇧 EN </a> | 
+  <a href='/es'> 🇪🇸 ES </a> | 
+  <a href='/pt'> 🇵🇹 PT </a> | 
+  <a href='/fr'> 🇫🇷 FR </a> | 
+  <a href='/de'> 🇩🇪 DE </a> | 
+  <a href='/hi'> 🇮🇳 HI </a> | 
+  <a href='/ja'> 🇯🇵 JA </a> 
+</div>
+
+<div class="container-fluid text-center">
+    <div class="btn-group" role="group" aria-label="वीडियो प्रकार">
+      <a href="/hi/mp4-player-online.html" class="btn btn-outline-primary btn-lg">MP4 प्लेयर</a>
+      <a href="/hi/mpd-dash-player.html" class="btn btn-outline-primary btn-lg">DASH/MPD प्लेयर</a>
+      <a href="/hi/" class="btn btn-outline-primary btn-lg">M3U8/HLS प्लेयर</a>
+    </div>
+</div>
+
+<div class='w-m-70'>
+<div class='card mt-3'>
+<div class='card-header text-center'>
+<b>ऑनलाइन MP4/M3U8/HLS प्लेयर</b>
+</div>
+<div class='card-body text-center'>
+<div class='form-horizontal'>
+<div class="form-group">
+  <label for="livelink">अपना MP4/M3U8/HLS लिंक दर्ज करें 👇👇</label>
+  <input class="form-control" id="livelink" name="livelink" placeholder="यहां अपना लिंक पेस्ट करें..." required="required" type="text" value="" oninput="generateIframeUrl()" />
+</div>
+<div class="form-group">
+  <label for="playerytype"><b>प्लेयर चुनें</b></label>
+  <select class="select form-control" id="playerytype" name="playerytype" required="required" onchange="generateIframeUrl()">
+    <option value="player2">केवल M3U8 - D'Player</option>
+    <option value="player3">MP4/M3U8 - JWPlayer</option>
+    <option value="player1">MP4/M3U8 - Clappr Player</option>
+    <option value="mp4">MP4 ऑनलाइन प्लेयर</option>
+    <option value="player4">केवल M3U8 - VideoJS Player</option>    
+    <option value="player6">Iframe - Iframe Player</option>    
+    <option value="flv">FLV - ऑनलाइन प्लेयर</option>
+  </select>
+</div>
+
+<!-- Iframe URL Output Section -->
+<div id="iframeSection" class="form-group" style="display:none;">
+  <textarea id="iframeUrl" readonly class="form-control" ondblclick="copyIframeUrl()"></textarea>
+  <small id="copyHint" style="display:block; margin-top:5px; color: #888;">कॉपी करने के लिए डबल-क्लिक करें</small>
+</div>
+
+<!-- Play Now Button -->
+<a id="playerLink" target="_blank">
+  <button class="btn btn-primary" id="trydemo" name="submit" type="button" onclick="redirectToPlayer()">अब चलाएं</button>
+</a>
+<div><br/></div>
+
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7981191925382455"
+     crossorigin="anonymous"></script>
+<!-- Responsiveeee -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7981191925382455"
+     data-ad-slot="3322637685"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+</div>
+</div>
+</div>
+
+<div class="container py-5">
+
+<!-- Introduction Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">M3U8 प्लेयर क्या है?</h2>
+<p>वीडियो स्ट्रीमिंग पहले से कहीं अधिक लोकप्रिय है, और <strong>M3U8 प्लेयर ऑनलाइन</strong> टूल्स ने बिना किसी सॉफ्टवेयर इंस्टॉलेशन के <strong>HLS (HTTP लाइव स्ट्रीमिंग) फाइल्स</strong> देखना आसान बना दिया है। चाहे आप <strong>M3U8 ऑनलाइन चलाना</strong> चाहते हों, <strong>HLS स्ट्रीम प्लेयर का परीक्षण</strong> करना चाहते हों, या <strong>M3U8 वेब प्लेयर</strong> का उपयोग करना चाहते हों, <strong>HLS-Player.net</strong> आपका पसंदीदा प्लेटफॉर्म है।</p>
+<p>हमारा <strong>मुफ्त M3U8 प्लेयर ऑनलाइन</strong> <strong>HLS वीडियो प्लेयर कार्यक्षमता</strong> का समर्थन करता है, जिससे उपयोगकर्ता सभी डिवाइसों पर निर्बाध प्लेबैक का आनंद ले सकते हैं। चाहे आप <strong>IPTV, लाइव प्रसारण, या वीडियो-ऑन-डिमांड (VOD) सामग्री</strong> स्ट्रीम कर रहे हों, हमारा <strong>HLS प्लेयर ऑनलाइन</strong> बिना बफरिंग के <strong>उच्च-गुणवत्ता वाला प्लेबैक</strong> प्रदान करता है।</p>
+</div>
+</div>
+</div>
+
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7981191925382455"
+     crossorigin="anonymous"></script>
+<!-- Responsiveeee -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7981191925382455"
+     data-ad-slot="3322637685"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<!-- Why Use an Online M3U8 Player Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">ऑनलाइन M3U8 प्लेयर का उपयोग क्यों करें?</h2>
+<p><strong>HLS प्लेयर ऑनलाइन</strong> का उपयोग करने के कई फायदे हैं:</p>
+<ul>
+    <li><strong>M3U8 फाइल ऑनलाइन चलाएं</strong> – डाउनलोड या तृतीय-पक्ष सॉफ्टवेयर की आवश्यकता नहीं।</li>
+    <li><strong>HLS वीडियो प्रारूपों के साथ संगत</strong> – <strong>M3U8 स्ट्रीमिंग प्लेयर</strong> फाइल्स और <strong>HLS स्ट्रीम्स</strong> के साथ काम करता है।</li>
+    <li><strong>मोबाइल-फ्रेंडली और क्रॉस-ब्राउज़र समर्थन</strong> – विंडोज, मैक, एंड्रॉयड और iOS पर निर्बाध प्लेबैक का आनंद लें।</li>
+    <li><strong>M3U8 टेस्टर ऑनलाइन</strong> – यह जांचें कि क्या <strong>M3U8 स्ट्रीम</strong> एम्बेड करने से पहले काम कर रहा है।</li>
+    <li><strong>HLS को MP4 में ऑनलाइन बदलें</strong> – ऑफलाइन देखने के लिए <strong>HLS स्ट्रीमिंग प्लेयर</strong> वीडियो डाउनलोड करें।</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- How to Play M3U8 Files Online Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">M3U8 फाइल्स को ऑनलाइन कैसे चलाएं?</h2>
+<p><strong>HLS-Player.net</strong> के साथ M3U8 फाइल्स चलाना आसान है। इन चरणों का पालन करें:</p>
+<h3>चरण 1 – M3U8 लिंक कॉपी करें</h3>
+<p>IPTV स्रोत या लाइव स्ट्रीमिंग वेबसाइट से <strong>M3U8 लिंक ऑनलाइन</strong> ढूंढें।</p>
+<h3>चरण 2 – हमारे M3U8 ऑनलाइन प्लेयर में लिंक पेस्ट करें</h3>
+<p>हमारे <strong>मुफ्त M3U8 प्लेयर</strong> का उपयोग करके इनपुट फील्ड में लिंक पेस्ट करें।</p>
+<h3>चरण 3 – प्ले पर क्लिक करें और आनंद लें!</h3>
+<p>हमारे <strong>HLS प्लेयर - M3U8 स्ट्रीमिंग प्लेयर</strong> पर तुरंत अपना स्ट्रीम शुरू करने के लिए <strong>प्ले</strong> दबाएं।</p>
+<p><strong>टिप:</strong> यदि स्ट्रीम लोड नहीं होता, तो हमारे <strong>M3U8 टेस्टर</strong> का उपयोग करके लिंक की जांच करें या एक अलग <strong>HLS वीडियो प्लेयर ऑनलाइन</strong> आजमाएं।</p>
+</div>
+</div>
+</div>
+
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7981191925382455"
+     crossorigin="anonymous"></script>
+<!-- Responsiveeee -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7981191925382455"
+     data-ad-slot="3322637685"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<!-- Features of HLS-Player.net Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">HLS-Player.net की विशेषताएं</h2>
+<h3>1. मुफ्त M3U8 प्लेयर ऑनलाइन</h3>
+<p>कोई पंजीकरण आवश्यक नहीं! हमारा <strong>M3U8 वेब प्लेयर</strong> एक <strong>मुफ्त HLS प्लेयर ऑनलाइन</strong> है जो तुरंत काम करता है।</p>
+<h3>2. M3U8 टेस्टर और लिंक चेकर</h3>
+<p>हमारे <strong>M3U8 टेस्टर ऑनलाइन</strong> का उपयोग करके जांचें कि क्या <strong>M3U8 लिंक</strong> आपकी वेबसाइट या ऐप में एम्बेड करने से पहले काम कर रहा है।</p>
+<h3>3. HLS से MP4 ऑनलाइन रूपांतरण</h3>
+<p>अपना स्ट्रीम सहेजना चाहते हैं? हमारे <strong>HLS से MP4 ऑनलाइन</strong> टूल का उपयोग करके वीडियो डाउनलोड करें।</p>
+<h3>4. मोबाइल और क्रॉस-ब्राउज़र संगतता</h3>
+<p>हमारा <strong>HLS वीडियो प्लेयर ऑनलाइन</strong> सभी प्रमुख ब्राउज़रों पर काम करता है, जिसमें <strong>क्रोम, फायरफॉक्स, एज और सफारी</strong> शामिल हैं।</p>
+<h3>5. IPTV और लाइव स्ट्रीमिंग समर्थन</h3>
+<p><strong>IPTV M3U8 फाइल्स</strong>, <strong>HLS स्ट्रीम ऑनलाइन</strong> और <strong>M3U8 वीडियो प्लेयर ऑनलाइन</strong> सामग्री को आसानी से चलाएं।</p>
+</div>
+</div>
+</div>
+
+<!-- How to Find M3U8 Links for Streaming Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">स्ट्रीमिंग के लिए M3U8 लिंक कैसे ढूंढें?</h2>
+<p>यदि आप <strong>M3U8 लिंक</strong> की तलाश में हैं, तो यहां कुछ स्रोत हैं:</p>
+<ul>
+    <li><strong>IPTV प्रदाता</strong> – कई IPTV सेवाएं <strong>M3U8 प्लेलिस्ट</strong> प्रदान करती हैं।</li>
+    <li><strong>लाइव टीवी वेबसाइट्स</strong> – कुछ स्ट्रीमिंग सेवाएं <strong>HLS वीडियो प्लेयर URLs</strong> प्रदान करती हैं।</li>
+    <li><strong>M3U8 फाइंडर ऑनलाइन</strong> – उन टूल्स का उपयोग करें जो सार्वजनिक <strong>HLS प्लेयर लिंक</strong> खोजने में मदद करते हैं।</li>
+    <li><strong>डेवलपर टूल्स</strong> – ब्राउज़र डेवलपर टूल्स का उपयोग करके वीडियो प्लेयर से <strong>M3U8 लिंक</strong> निकालें।</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Common Issues with M3U8 Playback Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">M3U8 प्लेबैक में सामान्य समस्याएं (और समाधान)</h2>
+<h3>🔹 समस्या: वीडियो नहीं चल रहा?</h3>
+<p><strong>समाधान:</strong> <strong>M3U8 URL</strong> की जांच करें कि यह <strong>M3U8 टेस्टर ऑनलाइन</strong> का उपयोग करके सक्रिय है।</p>
+<h3>🔹 समस्या: प्लेबैक में बफरिंग?</h3>
+<p><strong>समाधान:</strong> एक <strong>तेज़ इंटरनेट कनेक्शन</strong> का उपयोग करें और एक अलग <strong>HLS स्ट्रीम प्लेयर</strong> आजमाएं।</p>
+<h3>🔹 समस्या: असमर्थित ब्राउज़र?</h3>
+<p><strong>समाधान:</strong> <strong>क्रोम, फायरफॉक्स या एज</strong> का उपयोग करें, जो <strong>HLS वीडियो प्लेयर</strong> को मूल रूप से समर्थन करते हैं।</p>
+</div>
+</div>
+</div>
+
+<!-- FAQ Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">अक्सर पूछे जाने वाले प्रश्न (FAQ)</h2>
+<h3>प्र1: M3U8 फाइल क्या है?</h3>
+<p>एक <strong>M3U8 फाइल</strong> <strong>HLS स्ट्रीमिंग</strong> के लिए एक प्लेलिस्ट प्रारूप है, जो आमतौर पर <strong>IPTV, VOD और लाइव प्रसारण</strong> के लिए उपयोग किया जाता है।</p>
+<h3>प्र2: क्या मैं मोबाइल पर M3U8 फाइल्स चला सकता हूँ?</h3>
+<p>हाँ! हमारा <strong>HLS प्लेयर ऑनलाइन</strong> <strong>iOS और Android डिवाइसों</strong> पर काम करता है।</p>
+<h3>प्र3: M3U8 स्ट्रीम का परीक्षण कैसे करें?</h3>
+<p>हमारे <strong>M3U8 टेस्टर ऑनलाइन</strong> का उपयोग करके जांचें कि क्या <strong>M3U8 लिंक ऑनलाइन</strong> काम कर रहा है।</p>
+<h3>प्र4: क्या मैं M3U8 को MP4 में बदल सकता हूँ?</h3>
+<p>हाँ! हमारा <strong>HLS से MP4 ऑनलाइन</strong> टूल आपको <strong>M3U8 फाइल्स को MP4</strong> के रूप में डाउनलोड करने की अनुमति देता है।</p>
+<h3>प्र5: क्या HLS-Player.net M3U8 प्लेलिस्ट स्ट्रीमिंग का समर्थन करता है?</h3>
+<p>बिल्कुल! आप <strong>कोई भी M3U8 फाइल ऑनलाइन चला सकते हैं</strong> और प्लेलिस्ट को आसानी से स्ट्रीम कर सकते हैं।</p>
+</div>
+</div>
+</div>
+
+<!-- Why Choose HLS-Player.net Section -->
+<div class="col-lg-12 mb-4">
+<div class="card shadow-sm">
+<div class="card-body">
+<h2 class="section-heading">HLS-Player.net को स्ट्रीमिंग के लिए क्यों चुनें?</h2>
+<ul>
+    <li><strong>तेज और सुरक्षित</strong> – <strong>M3U8 स्ट्रीम्स ऑनलाइन</strong> बिना देरी के चलाएं।</li>
+    <li><strong>कोई सॉफ्टवेयर आवश्यक नहीं</strong> – हमारे <strong>HLS प्लेयर - M3U8 स्ट्रीमिंग प्लेयर</strong> का तुरंत उपयोग करें।</li>
+    <li><strong>सभी डिवाइसों का समर्थन</strong> – मोबाइल, टैबलेट और डेस्कटॉप के लिए उपयुक्त।</li>
+    <li><strong>100% मुफ्त</strong> – कोई सदस्यता, कोई छिपी हुई फीस।</li>
+</ul>
+<p><strong>HLS-Player.net के साथ अभी स्ट्रीमिंग शुरू करें!</strong></p>
+</div>
+</div>
+</div>
+
+</div>
+
+<center>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7981191925382455"
+     crossorigin="anonymous"></script>
+<!-- Responsiveeee -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-7981191925382455"
+     data-ad-slot="3322637685"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</center>
+
+<div class='card my-1 p-1 w-100 text-center d-block'>
+हमारे पेज: <a href='/hi/?view=contact'>हमसे संपर्क करें</a> | 
+<a href='/hi/?view=disclaimer'>अस्वीकरण</a> | <a href='/hi/?view=privacypolicy'>गोपनीयता नीति</a> | 
+<a href='/hi/?view=termsconditions'>नियम और शर्तें</a>
+</div>
+
+<div class='card my-1 p-1 w-100 text-center d-block'>
+अधिक प्लेयर: 
+<a href='/hi/hls-player-online.html'>HLS प्लेयर ऑनलाइन</a> | 
+<a href='/hi/m3u8-online-player.html'>M3U8 ऑनलाइन प्लेयर</a> | 
+<a href='/hi/m3u8-player-online-free.html'>मुफ्त M3U8 प्लेयर ऑनलाइन</a> | 
+<a href='/hi/m3u8-player-online.html'>M3U8 प्लेयर ऑनलाइन</a> |
+<a href='/hi/m3u8-player.html'>M3U8 प्लेयर</a> | 
+<a href='/hi/play-m3u8-online.html'>M3U8 ऑनलाइन चलाएं</a>
+</div>
+
+<div class='colors section' id='Colors'>
+<div class='widget HTML' data-version='1' id='HTML301'>
+<style> div#sharbtn, div#relodbtn { background: #e72432; } </style>
+</div>
+<div class='widget HTML' data-version='1' id='HTML302'>
+<style> .play-wrapper, .video-js .vjs-big-play-button, .plyr__control--overlaid, button.rmp-button.rmp-overlay-button.rmp-color-bg { background-color: #e72432 !important; } </style>
+</div>
+<div class='widget HTML' data-version='1' id='HTML303'>
+</div>
+</div>
+
+<!-- BEGIN: Powered by Supercounters.com -->
+<div style="position:fixed;top:0;left:0;width:100%;height:1px;overflow:hidden;visibility:hidden;z-index:9999;">
+<script id="_wau6ae">var _wau = _wau || []; _wau.push(["dynamic", "1zcs58ixog", "6ae", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
+</div>
+
+</body>
+</html>
