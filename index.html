@@ -1,48 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
+
 <head>
-<link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Player</title>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body {
-  margin:0;
-  background:#000;
+
+body{
+    margin:0;
+    background:#000;
+    overflow:hidden;
 }
 
-.video-js {
-  width:100%;
-  height:100vh;
+video{
+    width:100vw;
+    height:100vh;
+    background:#000;
 }
+
 </style>
 
 </head>
 
+
 <body>
 
-<video
- id="player"
- class="video-js"
- controls
- controlsList="nodownload"
- oncontextmenu="return false;">
+
+<video 
+id="video"
+controls
+controlsList="nodownload"
+disablePictureInPicture
+oncontextmenu="return false">
 </video>
 
 
-<script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
 
 <script>
 
-const params = new URLSearchParams(location.search);
-const url = params.get("url");
 
-const player = videojs("player");
+// รับลิงก์ m3u8 จากหลัง ?
+// ตัวอย่าง:
+// player.html?url=https://xxx.com/video.m3u8
 
-player.src({
-  src:url,
-  type:"application/x-mpegURL"
-});
+const url = new URLSearchParams(window.location.search).get("url");
+
+
+const video = document.getElementById("video");
+
+
+if(!url){
+
+    document.body.innerHTML =
+    "<h2 style='color:white;text-align:center'>ไม่พบลิงก์วิดีโอ</h2>";
+
+}
+
+
+// เล่น m3u8
+
+else if(Hls.isSupported()){
+
+
+    const hls = new Hls({
+
+        enableWorker:true,
+        lowLatencyMode:true
+
+    });
+
+
+    hls.loadSource(url);
+
+    hls.attachMedia(video);
+
+
+    hls.on(Hls.Events.MANIFEST_PARSED,function(){
+
+        video.play();
+
+    });
+
+
+}
+
+
+
+else if(video.canPlayType(
+'application/vnd.apple.mpegurl'
+)){
+
+
+    video.src = url;
+
+    video.play();
+
+}
+
 
 </script>
+
+
 
 </body>
 </html>
