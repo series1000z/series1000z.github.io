@@ -2,26 +2,51 @@
 <html lang="th">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Player</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>My Video Player</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
 
 <style>
 
 body{
     margin:0;
-    background:#000;
-    overflow:hidden;
+    background:#111;
+    color:white;
+    font-family:Arial;
+    text-align:center;
 }
 
+
+.box{
+    padding:20px;
+}
+
+
+input{
+    width:80%;
+    padding:12px;
+    font-size:16px;
+}
+
+
+button{
+    padding:12px 25px;
+    margin:10px;
+    cursor:pointer;
+}
+
+
 video{
-    width:100vw;
-    height:100vh;
+    width:90%;
+    max-height:80vh;
     background:#000;
 }
+
 
 </style>
 
@@ -31,12 +56,29 @@ video{
 <body>
 
 
-<video 
+<div class="box">
+
+<h2>Video Player</h2>
+
+
+<input id="url"
+placeholder="ใส่ลิงก์ mp4 หรือ m3u8">
+
+
+<button onclick="playVideo()">
+เล่น
+</button>
+
+
+</div>
+
+
+<video
 id="video"
 controls
 controlsList="nodownload"
-disablePictureInPicture
-oncontextmenu="return false">
+oncontextmenu="return false"
+playsinline>
 </video>
 
 
@@ -44,67 +86,72 @@ oncontextmenu="return false">
 <script>
 
 
-// รับลิงก์ m3u8 จากหลัง ?
-// ตัวอย่าง:
-// player.html?url=https://xxx.com/video.m3u8
-
-const url = new URLSearchParams(window.location.search).get("url");
+let hls;
 
 
-const video = document.getElementById("video");
+function playVideo(){
 
 
-if(!url){
-
-    document.body.innerHTML =
-    "<h2 style='color:white;text-align:center'>ไม่พบลิงก์วิดีโอ</h2>";
-
-}
+const url =
+document.getElementById("url").value;
 
 
-// เล่น m3u8
-
-else if(Hls.isSupported()){
-
-
-    const hls = new Hls({
-
-        enableWorker:true,
-        lowLatencyMode:true
-
-    });
+const video =
+document.getElementById("video");
 
 
-    hls.loadSource(url);
 
-    hls.attachMedia(video);
+// ล้างตัวเก่า
 
-
-    hls.on(Hls.Events.MANIFEST_PARSED,function(){
-
-        video.play();
-
-    });
-
-
+if(hls){
+    hls.destroy();
 }
 
 
 
-else if(video.canPlayType(
-'application/vnd.apple.mpegurl'
-)){
+// m3u8
+
+if(url.includes(".m3u8")){
 
 
-    video.src = url;
+    if(Hls.isSupported()){
 
-    video.play();
+
+        hls = new Hls();
+
+        hls.loadSource(url);
+
+        hls.attachMedia(video);
+
+
+    }else{
+
+        video.src=url;
+
+    }
+
 
 }
+
+
+// mp4 / pixeldrain
+
+else{
+
+
+    video.src=url;
+
+}
+
+
+video.play();
+
+
+}
+
 
 
 </script>
-
 
 
 </body>
