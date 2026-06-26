@@ -7,118 +7,51 @@
 
 <title>Player</title>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
 <style>
+
 body{
     margin:0;
     background:#000;
 }
 
-video{
+iframe{
     width:100vw;
     height:100vh;
+    border:0;
 }
+
 </style>
 
 </head>
 
 <body>
 
-<video id="video"
-controls
-controlsList="nodownload"
-playsinline
-oncontextmenu="return false">
-</video>
+
+<iframe 
+id="player"
+allowfullscreen
+allow="autoplay; fullscreen">
+</iframe>
 
 
 <script>
 
-const video = document.getElementById("video");
-
 let url = new URLSearchParams(location.search).get("url");
 
 
-if(!url){
+if(url){
+
+document.getElementById("player").src = url;
+
+}else{
 
 document.body.innerHTML =
 "<h2 style='color:white;text-align:center'>ไม่พบลิงก์</h2>";
 
 }
 
-
-// เล่นไฟล์ตรง
-function playVideo(src){
-
-if(src.includes(".m3u8")){
-
-    if(Hls.isSupported()){
-
-        const hls = new Hls();
-
-        hls.loadSource(src);
-        hls.attachMedia(video);
-
-    }else{
-
-        video.src = src;
-
-    }
-
-}else{
-
-    video.src = src;
-
-}
-
-}
-
-
-// ถ้าเป็นหน้า embed
-if(url.includes("/e/")){
-
-
-fetch(url)
-.then(res=>res.text())
-.then(html=>{
-
-
-let found = 
-html.match(/https?:\/\/[^"' ]+\.(m3u8|mp4)[^"' ]*/);
-
-
-if(found){
-
-playVideo(found[0]);
-
-}else{
-
-document.body.innerHTML =
-"<h2 style='color:white;text-align:center'>หาไฟล์วีดีโอไม่เจอ</h2>";
-
-}
-
-
-})
-.catch(()=>{
-
-document.body.innerHTML =
-"<h2 style='color:white;text-align:center'>โหลดลิงก์ไม่ได้</h2>";
-
-});
-
-
-}else{
-
-
-playVideo(url);
-
-
-}
-
-
 </script>
+
 
 </body>
 </html>
