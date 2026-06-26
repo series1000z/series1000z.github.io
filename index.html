@@ -12,12 +12,27 @@
 body{
     margin:0;
     background:#000;
+    overflow:hidden;
 }
 
-iframe{
+#player{
     width:100vw;
     height:100vh;
     border:0;
+}
+
+#fullscreen{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+    background:#fff;
+    color:#000;
+    border:0;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
 }
 
 </style>
@@ -34,14 +49,19 @@ allow="autoplay; fullscreen">
 </iframe>
 
 
+<button id="fullscreen">เต็มจอ</button>
+
+
 <script>
 
 let url = new URLSearchParams(location.search).get("url");
 
+const player = document.getElementById("player");
+
 
 if(url){
 
-document.getElementById("player").src = url;
+player.src = url;
 
 }else{
 
@@ -49,6 +69,24 @@ document.body.innerHTML =
 "<h2 style='color:white;text-align:center'>ไม่พบลิงก์</h2>";
 
 }
+
+
+
+document.getElementById("fullscreen").onclick = ()=>{
+
+
+if(player.requestFullscreen){
+
+    player.requestFullscreen();
+
+}else if(player.webkitRequestFullscreen){
+
+    player.webkitRequestFullscreen();
+
+}
+
+};
+
 
 </script>
 
