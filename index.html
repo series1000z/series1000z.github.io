@@ -25,7 +25,6 @@ video{
 
 <body>
 
-
 <video id="video"
 controls
 controlsList="nodownload"
@@ -49,46 +48,77 @@ document.body.innerHTML =
 }
 
 
-// Pixeldrain
-if(url.includes("https://pixeldrain.com/api/file/")){
+// เล่นไฟล์ตรง
+function playVideo(src){
 
-    url = url.replace(
-    "https:https://pixeldrain.com/api/file/",
-    "https://pixeldrain.com/api/file/"
-    );
-
-}
-
-
-if(url.includes(".m3u8")){
-
+if(src.includes(".m3u8")){
 
     if(Hls.isSupported()){
 
         const hls = new Hls();
 
-        hls.loadSource(url);
-
+        hls.loadSource(src);
         hls.attachMedia(video);
 
     }else{
 
-        video.src=url;
+        video.src = src;
 
     }
+
+}else{
+
+    video.src = src;
+
+}
+
+}
+
+
+// ถ้าเป็นหน้า embed
+if(url.includes("/e/")){
+
+
+fetch(url)
+.then(res=>res.text())
+.then(html=>{
+
+
+let found = 
+html.match(/https?:\/\/[^"' ]+\.(m3u8|mp4)[^"' ]*/);
+
+
+if(found){
+
+playVideo(found[0]);
+
+}else{
+
+document.body.innerHTML =
+"<h2 style='color:white;text-align:center'>หาไฟล์วีดีโอไม่เจอ</h2>";
+
+}
+
+
+})
+.catch(()=>{
+
+document.body.innerHTML =
+"<h2 style='color:white;text-align:center'>โหลดลิงก์ไม่ได้</h2>";
+
+});
 
 
 }else{
 
 
-    video.src=url;
+playVideo(url);
 
 
 }
 
 
 </script>
-
 
 </body>
 </html>
